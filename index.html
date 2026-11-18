@@ -7,28 +7,21 @@
 <meta name="description" content="The open-source repos from Utopia Models: Eagle Eye, Vizier and dispatch-runtime. MIT licensed, demo data only.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Instrument+Serif:ital@1&family=Geist:wght@400;500&family=Geist+Mono&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<style type="text/tailwindcss">
-@theme { --font-display: "Archivo", sans-serif; --font-serif: "Instrument Serif", serif; --font-sans: "Geist", sans-serif; --font-mono: "Geist Mono", monospace;
- --color-ink: #0b0b0a; --color-gold: #d4a84b; --color-linen: #efe9dc; }
-</style>
+<link rel="stylesheet" href="/styles.css">
+<meta property="og:title" content="Open source · Utopia Models"><meta property="og:description" content="Vizier, Eagle Eye and dispatch-runtime: MIT licensed, demo data only."><meta property="og:url" content="https://oss.utopiamodels.ai"><meta name="theme-color" content="#0b0b0a">
 </head>
 <body class="bg-ink text-linen font-sans antialiased">
-<main class="mx-auto max-w-4xl px-6 py-16 md:py-24">
+<header class="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-6 pt-6 text-sm text-linen/70">
+  <a class="font-display font-bold text-linen" href="https://utopiamodels.ai">Utopia Models</a>
+  <nav class="flex flex-wrap gap-x-6 gap-y-2"><a class="text-gold" href="https://oss.utopiamodels.ai">Open source</a><a class="hover:text-gold" href="https://services.utopiamodels.ai">Services</a><a class="hover:text-gold" href="https://docs.utopiamodels.ai">Docs</a><a class="hover:text-gold" href="https://live.utopiamodels.ai">Live</a></nav>
+</header>
+<main class="mx-auto max-w-4xl px-6 py-12 md:py-20">
   <p class="font-mono text-xs uppercase tracking-widest text-gold">oss.utopiamodels.ai</p>
   <h1 class="font-display font-extrabold text-5xl md:text-7xl mt-4 leading-none">Take the code.</h1>
   <p class="font-serif italic text-gold text-2xl md:text-3xl mt-4">Engine and interface. Demo data only.</p>
   <p class="mt-6 max-w-2xl text-linen/80">These are the repos Utopia Models keeps public. Each is MIT licensed and runs on its bundled demo data. Real jobs, contacts, resumes and logins never leave the private deployment.</p>
 
   <div class="mt-12 grid grid-cols-1 gap-6">
-    <article class="min-w-0 rounded-xl border border-linen/15 p-6">
-      <div class="flex flex-wrap items-baseline justify-between gap-2"><h2 class="font-display font-bold text-2xl">Eagle Eye</h2><span class="font-mono text-xs text-gold">MIT</span></div>
-      <p class="mt-2 text-linen/80">One eye on every agent. Each agent's lane on one screen, redrawn every 5 seconds.</p>
-      <pre class="mt-4 whitespace-pre-wrap break-all rounded-lg bg-linen/5 p-4 font-mono text-sm">curl -fsSL eagleeye.sh/install | sh
-# serves the demo on http://localhost:8000</pre>
-      <p class="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm"><a class="text-gold underline" href="https://github.com/utopia-models/eagle-eye">Source</a><a class="text-gold underline" href="https://utopia-models.github.io/eagle-eye/">Live demo</a><a class="text-gold underline" href="https://eagleeye.sh">eagleeye.sh</a></p>
-    </article>
-
     <article class="min-w-0 rounded-xl border border-linen/15 p-6">
       <div class="flex flex-wrap items-baseline justify-between gap-2"><h2 class="font-display font-bold text-2xl">Vizier</h2><span class="font-mono text-xs text-gold">MIT</span></div>
       <p class="mt-2 text-linen/80">A display-only teleprompter and call overlay any agent can drive over HTTP or MCP.</p>
@@ -39,17 +32,28 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
     </article>
 
     <article class="min-w-0 rounded-xl border border-linen/15 p-6">
+      <div class="flex flex-wrap items-baseline justify-between gap-2"><h2 class="font-display font-bold text-2xl">Eagle Eye</h2><span class="font-mono text-xs text-gold">MIT</span></div>
+      <p class="mt-2 text-linen/80">One eye on every agent. Each agent's lane on one screen, redrawn every 5 seconds.</p>
+      <pre class="mt-4 whitespace-pre-wrap break-all rounded-lg bg-linen/5 p-4 font-mono text-sm">curl -fsSL eagleeye.sh/install | sh
+# serves the demo on http://localhost:8000</pre>
+      <p class="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm"><a class="text-gold underline" href="https://github.com/utopia-models/eagle-eye">Source</a><a class="text-gold underline" href="https://utopia-models.github.io/eagle-eye/">Live demo</a><a class="text-gold underline" href="https://eagleeye.sh">eagleeye.sh</a></p>
+    </article>
+
+    <article class="min-w-0 rounded-xl border border-linen/15 p-6">
       <div class="flex flex-wrap items-baseline justify-between gap-2"><h2 class="font-display font-bold text-2xl">dispatch-runtime</h2><span class="font-mono text-xs text-gold">MIT</span></div>
       <p class="mt-2 text-linen/80">The dispatch layer of a small agent fleet: one systemd unit per issue, and the flock that closed a 26-27 second cross-user race. Published to be read; it is not a package and will not run unchanged on another host.</p>
       <pre class="mt-4 whitespace-pre-wrap break-all rounded-lg bg-linen/5 p-4 font-mono text-sm">git clone https://github.com/utopia-models/dispatch-runtime
 # read README.md: the race, the fix, and what was scrubbed</pre>
       <p class="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm"><a class="text-gold underline" href="https://github.com/utopia-models/dispatch-runtime">Source</a></p>
     </article>
+
+
+
   </div>
 
   <footer class="mt-16 flex flex-wrap gap-x-6 gap-y-2 border-t border-linen/15 pt-6 text-sm text-linen/70">
     <a class="hover:text-gold" href="https://utopiamodels.ai">utopiamodels.ai</a>
-    <a class="hover:text-gold" href="https://utopiamodels.ai/call">Want it run for you? Book a call</a>
+    <a class="hover:text-gold" href="https://services.utopiamodels.ai">Want it run for you? See the services</a>
     <a class="hover:text-gold" href="https://docs.utopiamodels.ai">Docs</a>
     <a class="hover:text-gold" href="https://github.com/utopia-models">GitHub</a>
   </footer>
